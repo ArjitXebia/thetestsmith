@@ -1,0 +1,9 @@
+/* Add to your CSS file */
+input[type="range"] {
+    width: 200px; /* Adjust as needed */
+  }
+  
+  span {
+    font-size: 14px;
+  }
+  
