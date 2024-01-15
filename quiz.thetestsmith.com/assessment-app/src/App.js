@@ -4,9 +4,9 @@ import HomePage from './HomePage'; // Importing the HomePage component
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <h1>Assessment Platform</h1>
-      </header>
+      </header> */}
       <main>
         <HomePage /> {/* Rendering the HomePage component */}
       </main>

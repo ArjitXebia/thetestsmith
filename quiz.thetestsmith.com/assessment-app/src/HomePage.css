@@ -1,105 +1,120 @@
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
 }
 
 form div {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 /* Add to your CSS file */
 input[type="range"] {
-    width: 200px;
-    /* Adjust as needed */
+  width: 200px;
+  /* Adjust as needed */
 }
 
 span {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
   /* Continuing the CSS for the header */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: transparent; /* Adjust if you have a specific header background */
-  }
-  
-  .left-corner {
-    /* Intentionally left blank as per the requirement */
-    width: 200px; /* Placeholder width, adjust as needed */
-  }
-  
-  .logo {
-    font-size: 2rem;
-    /* Add your logo image or styling here */
-  }
-  
-  .site-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('./background.jpg') no-repeat center center;
-    background-size: cover;
-  }
-  
-  .form {
-    width: 300px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form input[type="text"],
-  .form input[type="email"] {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    background: #f1f1f1; /* Adjust footer background as needed */
-  }
-  
-  .footer span {
-    cursor: pointer;
-    color: #007bff;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  /* Adjust if you have a specific header background */
+}
+
+.left-corner {
+  /* Intentionally left blank as per the requirement */
+  width: 200px;
+  /* Placeholder width, adjust as needed */
+}
+
+.logo {
+  font-size: 2rem;
+  /* Add your logo image or styling here */
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('./background.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.form {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.footer span {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+
+}
