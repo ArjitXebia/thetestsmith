@@ -3,10 +3,10 @@
   color: #333;
   background-color: #f9f9f9;
   padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  max-width: 50%;
+  margin: 8% auto auto auto;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .test-header {
