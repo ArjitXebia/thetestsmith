@@ -15,10 +15,10 @@ label {
   font-size: 14px;
 }
 
-/* Add to your CSS file */
+
 input[type="range"] {
   width: 200px;
-  /* Adjust as needed */
+
 }
 
 span {
@@ -32,24 +32,24 @@ span {
 }
 
 .header {
-  /* Continuing the CSS for the header */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   background: transparent;
-  /* Adjust if you have a specific header background */
+
 }
 
 .left-corner {
-  /* Intentionally left blank as per the requirement */
+
   width: 200px;
-  /* Placeholder width, adjust as needed */
+
 }
 
 .logo {
   font-size: 2rem;
-  /* Add your logo image or styling here */
+
 }
 
 .site-name {
