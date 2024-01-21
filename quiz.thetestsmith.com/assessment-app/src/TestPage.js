@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TestPage.css'; // Make sure you have this CSS file in your project
 import question4 from './Images/Hello.png'
 
-const ConfirmationModal = ({ onSubmit, onCancel }) => (
+const ConfirmationModal = ({ onSubmit, onCancel}) => (
   <div className="modal-overlay">
     <div className="modal">
       <h4>Are you sure you want to submit your answer?</h4>
@@ -14,7 +14,7 @@ const ConfirmationModal = ({ onSubmit, onCancel }) => (
 
 
 
-const TestPage = () => {
+const TestPage = ({onTestFinish}) => {
   const [questions] = useState([
     {
       id: 1,
@@ -515,6 +515,16 @@ const TestPage = () => {
     resetTest();
   }, []);
 
+  useEffect(() => {
+    const savedState = JSON.parse(localStorage.getItem('testState'));
+    if (savedState) {
+      setCurrentQuestionIndex(savedState.currentQuestionIndex);
+      setQuestionsAsked(savedState.questionsAsked);
+      setScore(savedState.score);
+      // ... set other saved states
+    }
+  }, []);
+
 
   const resetTest = () => {
     setCurrentQuestionIndex(0);
@@ -566,8 +576,10 @@ const TestPage = () => {
     return false;
   };
 
+
   // Add a check to render the score summary if there are no more questions
   if (questionsAsked === totalQuestions) {
+    localStorage.removeItem('testState');
     return (
       <div className="score-summary">
         <h2>Test Completed</h2>
@@ -575,7 +587,7 @@ const TestPage = () => {
         <p>Medium Questions Correct: {score.medium}</p>
         <p>Hard Questions Correct: {score.hard}</p>
         <p>Total Score: {score.total}</p>
-        {/* Add a button or link here to allow the user to navigate away from the test */}
+        <button onClick={onTestFinish}>Finish</button>
       </div>
     );
   }
@@ -611,6 +623,13 @@ const TestPage = () => {
     }
   
     setSelectedAnswer('');
+    const savedState = {
+      currentQuestionIndex,
+      questionsAsked,
+      score,
+      // ... other states you want to save
+    };
+    localStorage.setItem('testState', JSON.stringify(savedState));
   };
   
   const handleModalSubmit = () => {
@@ -624,7 +643,7 @@ const TestPage = () => {
     <div className="test-page">
       <div className="test-header">
         <div className="question-counter">{questionNumber} of {totalQuestions}</div>
-        <div>{questions[currentQuestionIndex].difficulty}</div>
+        <div><b> Difficulty Level:</b> {questions[currentQuestionIndex].difficulty.toUpperCase()}</div>
         <div className="timer">{timer}</div>
       </div>
       {currentQuestion.type !== 'image' ? (
