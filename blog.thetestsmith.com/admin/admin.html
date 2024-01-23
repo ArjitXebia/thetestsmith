@@ -4,14 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Blog Editor</title>
+    <title>Testsmith Blog Creator</title>
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-    <!-- Include Quill's script -->
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
-
-    <!-- Include Prism.js Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <link href="/blog.thetestsmith.com/shared/tailwind.css" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
@@ -19,7 +15,7 @@
 
 <body>
     <div class="editor-container">
-        <h1 class="text-2xl font-bold mb-4">Blog Editor</h1>
+        <h1 class="text-2xl font-bold mb-4">Testsmith Blog Creator</h1>
         <form id="blogForm">
             <!-- Title -->
             <div class="mb-4">
@@ -36,17 +32,21 @@
 
             <!-- Excerpt -->
             <div class="mb-4">
-                <label class="editor-label" for="excerpt">Excerpt:</label>
-                <textarea id="excerpt" class="editor-textarea"></textarea>
+                <label class="editor-label" for="summary">Summary:</label>
+                <textarea id="summary" class="editor-textarea"></textarea>
             </div>
 
             <!-- Categories/Tags -->
             <div class="mb-4">
-                <label class="editor-label" for="categories">Categories:</label>
-                <input type="text" id="categories" class="editor-input">
-                <label class="editor-label" for="tags">Tags:</label>
-                <input type="text" id="tags" class="editor-input">
+                <label class="editor-label" for="categoriesInput">Categories:</label>
+                <div class="tags-input-container">
+                    <div id="selectedCategories" class="selected-categories"></div>
+                    <input type="text" id="categoriesInput" class="editor-input" placeholder="Type to add categories...">
+                    <ul id="suggestionsList" class="suggestions-list"></ul>
+                </div>
             </div>
+            
+                      
 
             <!-- Featured Image -->
             <div class="mb-4">
@@ -65,9 +65,7 @@
             <!-- Author -->
             <div class="mb-4">
                 <label class="editor-label" for="author">Author:</label>
-                <select id="author" class="editor-input">
-                    <!-- Options for authors -->
-                </select>
+                <input type="text" id="author" class="editor-input" value="Arjit Yadav" disabled>
             </div>
 
             <!-- SEO Settings -->
