@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blog Editor</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <!-- Include Quill's script -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <link href="/blog.thetestsmith.com/shared/tailwind.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="editor-container">
+        <h1 class="text-2xl font-bold mb-4">Blog Editor</h1>
+        <form id="blogForm">
+            <!-- Title -->
+            <div class="mb-4">
+                <label class="editor-label" for="title">Title:</label>
+                <input type="text" id="title" class="editor-input">
+            </div>
+
+            <!-- Content (Rich Text Editor) -->
+            <div class="mb-4">
+                <label class="editor-label" for="content">Content:</label>
+                <!-- Create a div for Quill editor -->
+                <div id="content" class="editor-textarea"></div>
+            </div>
+
+            <!-- Excerpt -->
+            <div class="mb-4">
+                <label class="editor-label" for="excerpt">Excerpt:</label>
+                <textarea id="excerpt" class="editor-textarea"></textarea>
+            </div>
+
+            <!-- Categories/Tags -->
+            <div class="mb-4">
+                <label class="editor-label" for="categories">Categories:</label>
+                <input type="text" id="categories" class="editor-input">
+                <label class="editor-label" for="tags">Tags:</label>
+                <input type="text" id="tags" class="editor-input">
+            </div>
+
+            <!-- Featured Image -->
+            <div class="mb-4">
+                <label class="editor-label" for="featuredImage">Featured Image:</label>
+                <input type="file" id="featuredImage" class="editor-input">
+            </div>
+
+            <!-- Publish Date and Time -->
+            <div class="mb-4">
+                <label class="editor-label" for="publishDate">Publish Date:</label>
+                <input type="date" id="publishDate" class="editor-input">
+                <label class="editor-label" for="publishTime">Publish Time:</label>
+                <input type="time" id="publishTime" class="editor-input">
+            </div>
+
+            <!-- Author -->
+            <div class="mb-4">
+                <label class="editor-label" for="author">Author:</label>
+                <select id="author" class="editor-input">
+                    <!-- Options for authors -->
+                </select>
+            </div>
+
+            <!-- SEO Settings -->
+            <div class="mb-4">
+                <label class="editor-label" for="metaTitle">Meta Title:</label>
+                <input type="text" id="metaTitle" class="editor-input">
+                <label class="editor-label" for="metaDescription">Meta Description:</label>
+                <textarea id="metaDescription" class="editor-textarea"></textarea>
+            </div>
+
+            <!-- Additional Media Options -->
+            <!-- Add any additional media fields here -->
+
+            <!-- Save/Draft and Preview Buttons -->
+            <div class="mb-4">
+                <button type="submit" class="publish-btn">Publish</button>
+                <button type="button" class="draft-btn">Save as Draft</button>
+                <button type="button" class="preview-btn">Preview</button>
+            </div>
+            <div id="previewArea" class="hidden">
+                <h2 class="text-2xl font-bold mb-4">Preview</h2>
+                <div id="blogPreview"></div>
+            </div>
+        </form>
+    </div>
+    <script src="admin.js"></script>
+</body>
+
+</html>
