@@ -21,6 +21,26 @@ connection.connect(error => {
   console.log("Successfully connected to the database.");
 });
 
+app.get('/api/blogposts', (req, res) => {
+  let sql = 'SELECT * FROM blogposts';
+  const status = req.query.status;
+
+  if (status) {
+      sql += ` WHERE status = ${connection.escape(status)}`;
+  }
+
+  connection.query(sql, (error, results) => {
+      if (error) {
+          console.error("Error fetching data: ", error);
+          res.status(500).send("Error fetching blog posts");
+          return;
+      }
+
+      res.json(results);
+  });
+});
+
+
 // Endpoint to create a new blog post
 app.post('/createPost', (req, res) => {
   const postData = req.body;
@@ -35,7 +55,10 @@ app.post('/createPost', (req, res) => {
     }
 
     console.log(`Post added successfully with ID: ${results.insertId}`);
-    res.send(`Post added with ID: ${results.insertId}, Status: ${postData.status}`);
+    res.json({
+      message: `Post added with ID: ${results.insertId}`,
+      status: postData.status
+    });
   });
 });
 

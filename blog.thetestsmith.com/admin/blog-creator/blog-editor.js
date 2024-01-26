@@ -40,7 +40,7 @@ function submitPost(status) {
     };
 
     // Use fetch or another AJAX method to send the data to the server
-    fetch('https://server382.iseencloud.com:5000/createPost', {
+    fetch('http://localhost:5000/createPost', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -56,6 +56,25 @@ function submitPost(status) {
     });
     
 }
+
+document.getElementById('draftBtn').addEventListener('click', function() {
+    fetch('http://localhost:5000/getAllPosts')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(posts => {
+        console.log('Fetched posts:', posts);
+        // Here you can add code to display the posts on your page
+        // For example, update the innerHTML of a div to show post titles
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+    });
+});
+
 
 var quill = new Quill('#content', {
     theme: 'snow',
