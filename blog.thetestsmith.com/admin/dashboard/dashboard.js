@@ -32,3 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchAndDisplayArticles(statusFilter.value);
     });
 });
+
+document.getElementById('createArticleBtn').addEventListener('click', function() {
+    window.location.href = '../blog-creator/blog-editor.html'; // Replace with the actual path to your article creation page
+});
+

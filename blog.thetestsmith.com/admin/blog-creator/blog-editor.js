@@ -229,3 +229,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+document.getElementById('backToDashboardBtn').addEventListener('click', function() {
+    window.location.href = '../dashboard/dashboard.html'; // Replace with the actual path to your dashboard page
+});

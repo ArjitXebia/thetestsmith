@@ -66,3 +66,18 @@ h1 {
         width: 100%;
     }
 }
+
+#createArticleBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+#createArticleBtn:hover {
+    background-color: #45a049;
+}
