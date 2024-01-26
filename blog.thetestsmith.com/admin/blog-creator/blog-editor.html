@@ -40,12 +40,13 @@
                 <label class="editor-label" for="categoriesInput">Categories:</label>
                 <div class="tags-input-container">
                     <div id="selectedCategories" class="selected-categories"></div>
-                    <input type="text" id="categoriesInput" class="editor-input" placeholder="Type to add categories...">
+                    <input type="text" id="categoriesInput" class="editor-input"
+                        placeholder="Type to add categories...">
                     <ul id="suggestionsList" class="suggestions-list"></ul>
                 </div>
             </div>
-            
-                      
+
+
 
             <!-- Featured Image -->
             <div class="mb-4">
@@ -79,21 +80,25 @@
             <!-- Add any additional media fields here -->
 
             <!-- Save/Draft and Preview Buttons -->
+            <!-- ... rest of your HTML ... -->
+
             <div class="mb-4">
-                <button type="submit" class="publish-btn">Publish</button>
-                <button type="button" class="draft-btn">Save as Draft</button>
+                <button type="submit" class="publish-btn" onclick="submitPost('published')">Publish</button>
+                <button type="button" class="draft-btn" onclick="submitPost('draft')">Save as Draft</button>
                 <button type="button" class="preview-btn">Preview</button>
             </div>
+
+            <!-- ... rest of your HTML ... -->
         </form>
     </div>
     <div id="previewModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Preview</h2>
-          <div id="modalPreviewContent"></div>
+            <span class="close">&times;</span>
+            <h2>Preview</h2>
+            <div id="modalPreviewContent"></div>
         </div>
-      </div>
+    </div>
     <script src="blog-editor.js"></script>
 </body>
 

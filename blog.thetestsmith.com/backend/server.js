@@ -1,39 +1,45 @@
 const express = require('express');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const cors = require('cors')
 
 const app = express();
-app.use(cors());
+app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
-// Create a MySQL connection pool (adjust with your credentials)
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'your_host', // Replace with your host, usually 'localhost' or an IP address
-  user: 'your_username', // Replace with your database username
-  password: 'your_password', // Replace with your database password
-  database: 'your_database_name' // Replace with your database name
+// Create a connection to the database
+const connection = mysql.createConnection({
+  host: 'server382.iseencloud.com', // Replace with your database host, usually 'localhost' if on the same server
+  user: 'thetestsm', // Replace with your database username
+  password: 'Dr@gon12ball', // Replace with your database password
+  database: 'thetestsm_blogposts'
 });
 
-// Endpoint to get all categories
-app.get('/categories', (req, res) => {
-  pool.query('SELECT * FROM categories', (error, results, fields) => {
-    if (error) throw error;
-    res.json(results);
+// Connect to the MySQL server
+connection.connect(error => {
+  if (error) throw error;
+  console.log("Successfully connected to the database.");
+});
+
+// Endpoint to create a new blog post
+app.post('/createPost', (req, res) => {
+  const postData = req.body;
+  console.log("Received data for new post:", postData);
+
+  const sql = 'INSERT INTO blogposts SET ?';
+  connection.query(sql, postData, (error, results) => {
+    if (error) {
+      console.error("Error inserting data into the database: ", error);
+      res.status(500).send("Error inserting data into the database");
+      return;
+    }
+
+    console.log(`Post added successfully with ID: ${results.insertId}`);
+    res.send(`Post added with ID: ${results.insertId}, Status: ${postData.status}`);
   });
 });
 
-// Endpoint to add a new category
-app.post('/categories', (req, res) => {
-  const { name } = req.body;
-  pool.query('INSERT INTO categories (name) VALUES (?)', [name], (error, results, fields) => {
-    if (error) throw error;
-    res.json({ id: results.insertId, name });
-  });
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Set the server to listen on port 3000
+app.listen(5000, () => {
+  console.log('Server is running on port 5000');
 });
