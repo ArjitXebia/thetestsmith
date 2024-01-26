@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Article Dashboard</h1>
+        <label for="statusFilter">Filter by Status:</label>
+        <select id="statusFilter">
+            <option value="all">All</option>
+            <option value="published">Published</option>
+            <option value="draft">Draft</option>
+        </select>
+
+        <div id="articlesGrid">
+            <!-- Articles will be loaded here -->
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* Custom CSS for Blog Editor */
+
+/* General styling for the editor container */
+.editor-container {
+    max-width: 800px; /* Set a max-width for the container */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for form labels */
+.editor-label {
+    display: block; /* Make labels block elements */
+    margin-bottom: .5em;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Styling for input and textarea fields */
+.editor-input, .editor-textarea, #content {
+    width: 100%; /* Make inputs take full width of their container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.editor-textarea {
+    min-height: 150px; /* Reduce the min-height */
+}
+
+/* Styling for the buttons */
+button {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px; /* Add spacing between buttons */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+/* Styling for the Quill Editor */
+.ql-toolbar.ql-snow {
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+}
+
+.ql-container.ql-snow {
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    height: 300px; /* Set a fixed height or make it dynamic */
+}
+
+/* Additional styles */
+#previewArea {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px; /* Add some spacing from the buttons */
+    display: none; /* Hide it by default */
+}
+
+.selected-categories, .suggestions-list {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+}
+
+.selected-category-tag {
+    background-color: #007bff;
+    color: white;
+    margin-right: 5px;
+    margin-bottom: 5px; /* Add spacing between tags */
+}
+
+.tags-input-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%; /* Match the width of your input fields */
+}
+
+.selected-category-tag {
+    display: inline-block;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    padding: 3px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.selected-category-tag:after {
+    content: " ×";
+    color: #999;
+    margin-left: 5px;
+}
+
+#categoriesInput {
+    flex-grow: 1;
+    border: none;
+    padding: 4px;
+    margin: 2px;
+}
+
+#categoriesInput:focus {
+    outline: none;
+}
+
+/* Adjust the suggestions list to appear below the tags */
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2px; /* Slightly separate the list from the input */
+    position: absolute;
+    background-color: #fff;
+    width: 80%; /* Match the width of your input fields */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestions-list li {
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 1000px; /* Maximum width */
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+}
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
