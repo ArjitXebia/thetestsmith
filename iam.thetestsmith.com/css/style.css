@@ -1290,4 +1290,14 @@ input[type="text"] {
   opacity: 0;
 }
 
+#logo {
+  position: absolute;
+  top: -68px;
+  left: 19px;
+  height: 250px; /* You can adjust the height as needed */
+  width: auto;
+  z-index: 10; /* Make sure it's above other elements */
+  padding: 10px; /* Add some space around the logo */
+}
+
 /*# sourceMappingURL=style.css.map */
